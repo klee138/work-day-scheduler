@@ -2,14 +2,14 @@
 var currentTime = moment().toString();
          document.getElementById("currentDay").innerHTML = currentTime;
 
-//create calendar grid
+//calendar grid
 for (var i = 9; i < 18; i++) {
     var rowEl = $(`<div data-row=${i} id=${i} class="row">`);
       //creating grid for calendar
   for (var i = 9; i < 18; i++) {
     var rowEl = $(`<div data-row=${i} id=${i} class="row">`);
 
-    //columns for hour, events, and save buttons
+    //columns for time, events, and save buttons
     var colHour = $(`<div class="col-sm-2 hour"><h4>` + amPm(i) + `</h4>`);
     var colEvent = $(
       `<div class="col-sm-8"><textarea class="event" placeholder="Add an event"></textarea>`
@@ -18,7 +18,7 @@ for (var i = 9; i < 18; i++) {
       `<div class="col-sm-2 saveBtn"><button class="saveBtn" time=${i}><i class="far fa-save"></i></button>`
     );
 
-    //append columns to rows
+    //append columns and rows
 
     rowEl.append(colHour);
     rowEl.append(colEvent);
@@ -27,7 +27,7 @@ for (var i = 9; i < 18; i++) {
     //append to container
     $(".container").append(rowEl);
 
-    //determines am or pm
+    //function for am or pm
     function amPm(x) {
       if (x < 12) {
         return x + " AM";
@@ -48,9 +48,13 @@ for (var i = 9; i < 18; i++) {
       .siblings()
       .children(".event")
       .val();
-
+      
+//get events from local storage
     localStorage.setItem(time, event);
     console.log(time);
     console.log(event);
   });
+  var savedEvent = localStorage.getItem(event);
+  var savedTime = localStorage.getItem(time);
+
 };
