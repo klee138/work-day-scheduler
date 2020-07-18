@@ -59,5 +59,6 @@ for (var i = 9; i < 18; i++) {
 console.log(savedEvent);
 console.log(savedTime);
 //target input field created above to fill with localstorage event and time data
-var input = $()
+var input = $("Add an event");
+input.value = savedEvent;
 };
