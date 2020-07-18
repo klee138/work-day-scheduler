@@ -56,5 +56,8 @@ for (var i = 9; i < 18; i++) {
   });
   var savedEvent = localStorage.getItem(event);
   var savedTime = localStorage.getItem(time);
-
+console.log(savedEvent);
+console.log(savedTime);
+//target input field created above to fill with localstorage event and time data
+var input = $()
 };
