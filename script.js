@@ -4,10 +4,10 @@ var currentTime = moment().toString();
 
 //calendar
 for (var i = 9; i < 18; i++) {
-    var rowEl = $(`<div data-row=${i} id=${i} class="row">`);
+    var rowEl = $(`<div dataRow=${i} id=${i} class="row">`);
       //creating grid for calendar
   for (var i = 9; i < 18; i++) {
-    var rowEl = $(`<div data-row=${i} id=${i} class="row">`);
+    var rowEl = $(`<div dataRow=${i} id=${i} class="row">`);
 
     //time, events, saves
     var colHour = $(`<div class="col-sm-2 hour"><h4>` + amPm(i) + `</h4>`);
@@ -36,7 +36,6 @@ for (var i = 9; i < 18; i++) {
       }
     }
   }
-
   //set local storage
   var saveBtn = $(".saveBtn");
   saveBtn.on("click", function() {
