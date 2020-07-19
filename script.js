@@ -2,14 +2,14 @@
 var currentTime = moment().toString();
          document.getElementById("currentDay").innerHTML = currentTime;
 
-//calendar grid
+//calendar
 for (var i = 9; i < 18; i++) {
     var rowEl = $(`<div data-row=${i} id=${i} class="row">`);
       //creating grid for calendar
   for (var i = 9; i < 18; i++) {
     var rowEl = $(`<div data-row=${i} id=${i} class="row">`);
 
-    //columns for time, events, and save buttons
+    //time, events, saves
     var colHour = $(`<div class="col-sm-2 hour"><h4>` + amPm(i) + `</h4>`);
     var colEvent = $(
       `<div class="col-sm-8"><textarea class="event" placeholder="Add an event"></textarea>`
@@ -18,28 +18,26 @@ for (var i = 9; i < 18; i++) {
       `<div class="col-sm-2 saveBtn"><button class="saveBtn" time=${i}><i class="far fa-save"></i></button>`
     );
 
-    //append columns and rows
-
     rowEl.append(colHour);
     rowEl.append(colEvent);
     rowEl.append(colSave);
 
-    //append to container
+    //add to container
     $(".container").append(rowEl);
 
-    //function for am or pm
-    function amPm(x) {
-      if (x < 12) {
-        return x + " AM";
-      } else if (x === 12) {
-        return x + " PM";
+    //function for am / pm
+    function amPm(t) {
+      if (t < 12) {
+        return t + " AM";
+      } else if (t === 12) {
+        return t + " PM";
       } else {
-        return x - 12 + " PM";
+        return t - 12 + " PM";
       }
     }
   }
 
-  //save to local storage
+  //set local storage
   var saveBtn = $(".saveBtn");
   saveBtn.on("click", function() {
     var time = $(this).attr("time");
@@ -59,6 +57,6 @@ for (var i = 9; i < 18; i++) {
 console.log(savedEvent);
 console.log(savedTime);
 //target input field created above to fill with localstorage event and time data
-var input = $("Add an event");
-input.value = savedEvent;
+//var input = $("Add an event");
+//input.value = savedEvent;
 };
