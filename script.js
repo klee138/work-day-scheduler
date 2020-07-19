@@ -4,18 +4,18 @@ var currentTime = moment().toString();
 
 //calendar
 for (var i = 9; i < 18; i++) {
-    var rowEl = $(`<div dataRow=${i} id=${i} class="row">`);
+    var rowEl = $(`<div dataRow = ${i} id = ${i} class = "row">`);
       //creating grid for calendar
   for (var i = 9; i < 18; i++) {
-    var rowEl = $(`<div dataRow=${i} id=${i} class="row">`);
+    var rowEl = $(`<div dataRow = ${i} id = ${i} class = "row">`);
 
     //time, events, saves
-    var colHour = $(`<div class="col-sm-2 hour"><h4>` + amPm(i) + `</h4>`);
+    var colHour = $(`<div class = "col-sm-2 hour"><h4>` + amPm(i) + `</h4>`);
     var colEvent = $(
-      `<div class="col-sm-8"><textarea class="event" placeholder="Add an event"></textarea>`
+      `<div class = "col-sm-8"><textarea class = "event" placeholder = "Add an event"></textarea>`
     );
     var colSave = $(
-      `<div class="col-sm-2 saveBtn"><button class="saveBtn" time=${i}><i class="far fa-save"></i></button>`
+      `<div class = "col-sm-2 saveBtn"><button class = "saveBtn" time = ${i}><i class = "far fa-save"></i></button>`
     );
 
     rowEl.append(colHour);
@@ -55,7 +55,9 @@ for (var i = 9; i < 18; i++) {
   var savedTime = localStorage.getItem(time);
 console.log(savedEvent);
 console.log(savedTime);
+
 //target input field created above to fill with localstorage event and time data
-//var input = $("Add an event");
-//input.value = savedEvent;
+
+var input = $("Add an event");
+input.value = savedEvent;
 };
