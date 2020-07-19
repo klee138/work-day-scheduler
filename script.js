@@ -15,7 +15,7 @@ for (var i = 9; i < 18; i++) {
       `<div class = "col-sm-8"><textarea class = "event" placeholder = "Add an event"></textarea>`
     );
     var colSave = $(
-      `<div class = "col-sm-2 saveBtn"><button class = "saveBtn" time = ${i}><i class = "far fa-save"></i></button>`
+      `<div class = "col-sm-2 saveBtn"><button class = "saveBtn" time = ${i}><i class="far fa-save"></i></button>`
     );
 
     rowEl.append(colHour);
